@@ -3,10 +3,13 @@
 # Problem solving tool kit
 - Structure 
 - Action Architecture
-- Thinking modes
 - Problem solving phases architecture
-- Strategies/Paradigms
-- Tools and techniques
+- Thinking modes
+- Paradigms
+- Strategs
+- Tools
+- Techniques
+- Methods
 
 # User
 

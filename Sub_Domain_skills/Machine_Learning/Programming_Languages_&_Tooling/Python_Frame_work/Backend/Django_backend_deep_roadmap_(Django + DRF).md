@@ -1,0 +1,263 @@
+# DJANGO BACKEND — COMPLETE DEEP ROADMAP (DASH TREE)
+# Includes: Django core + Django REST Framework (DRF) for APIs
+
+- Django mental model
+  - project vs app
+    - project = configuration container
+    - app = reusable component
+  - request/response cycle
+    - URL resolution
+      - view dispatch
+        - middleware around it
+          - template/response
+            - middleware response phase
+  - MTV architecture
+    - Models
+    - Templates
+    - Views
+
+- Project setup
+  - environments
+    - dev settings
+    - staging settings
+    - prod settings
+  - settings organization
+    - split settings module
+    - env var config
+    - secrets management
+  - manage.py usage
+    - runserver (dev only)
+    - migrate
+    - createsuperuser
+    - collectstatic
+
+- Settings (production-critical)
+  - DEBUG = False in prod
+  - ALLOWED_HOSTS
+  - CSRF_TRUSTED_ORIGINS
+  - SECURE_* settings (HTTPS hardening)
+  - session/cookie security flags
+  - logging configuration
+  - static/media configuration
+
+- Apps & structure
+  - app boundaries
+    - domain-driven grouping
+  - common folder patterns
+    - models.py split into models/
+      - __init__.py exports
+    - services.py (business logic)
+    - selectors.py (query logic)
+    - serializers.py (DRF)
+    - views.py / api.py (DRF viewsets)
+    - urls.py (app routes)
+    - tests/ (pytest or unittest)
+
+- Middleware (Django core)
+  - what middleware does
+    - request preprocessing
+    - view execution
+    - response postprocessing
+    - exception processing
+  - ordering matters
+    - security middleware ordering
+    - session/auth middleware ordering
+  - writing custom middleware
+    - __call__ pattern
+    - process_view/process_exception patterns (depending approach)
+
+- Models & ORM (deep)
+  - fields
+    - basic fields
+      - CharField/TextField
+      - IntegerField/FloatField/DecimalField
+      - BooleanField
+      - DateTimeField
+      - JSONField (if used)
+    - field options
+      - null vs blank
+      - default
+      - db_index
+      - unique
+  - relationships
+    - ForeignKey
+      - on_delete rules
+    - OneToOneField
+    - ManyToManyField
+      - through tables
+  - constraints & indexes
+    - UniqueConstraint
+    - Index
+    - composite indexes
+  - querysets
+    - filtering
+    - annotations/aggregations
+    - select_related
+    - prefetch_related
+    - exists/count performance
+  - transactions
+    - atomic blocks
+    - select_for_update (locking concept)
+  - performance pitfalls
+    - N+1 queries
+    - heavy serialization triggering queries
+  - migrations
+    - makemigrations
+    - migrate
+    - data migrations
+    - migration dependencies
+    - forward-only migration strategies (advanced)
+
+- Admin (optional but powerful)
+  - model registration
+  - list display/search/filter
+  - custom admin forms/actions
+  - admin security practices
+
+- Forms & validation (Django core)
+  - forms
+    - field validation
+    - cleaning methods
+  - model forms
+  - when to prefer DRF serializers vs Django forms
+
+- Authentication (Django)
+  - auth system basics
+    - User model
+    - permissions model
+  - password hashing (built-in)
+  - sessions
+    - session backend choices
+      - DB-backed
+      - cached
+      - redis (via third-party)
+  - login/logout flow
+  - customizing user model (advanced)
+    - AbstractUser vs AbstractBaseUser
+    - migration implications
+
+- Authorization (Django)
+  - permissions
+    - model-level permissions
+    - custom permissions
+  - groups
+    - group permission assignment
+  - object-level permissions (often with third-party packages or custom)
+  - multi-tenant authorization patterns
+
+- Security (Django official features)
+  - CSRF protection
+    - token validation
+    - trusted origins rules
+  - XSS protection
+    - template auto-escaping
+  - SQL injection protection
+    - ORM parameterization
+  - clickjacking protection
+    - X-Frame-Options / middleware
+  - host header validation
+    - ALLOWED_HOSTS
+  - HTTPS/SSL settings
+  - secure cookies (HttpOnly/Secure/SameSite)
+
+- Django REST Framework (DRF) for APIs
+  - DRF basics
+    - Request/Response wrappers
+    - APIView
+    - Generic views
+    - ViewSets
+      - ModelViewSet
+      - ReadOnlyModelViewSet
+    - Routers
+      - DefaultRouter
+      - nested routers (advanced)
+  - serializers (core)
+    - Serializer vs ModelSerializer
+    - fields
+      - nested serializers
+      - serializer method fields
+    - validation
+      - field-level validate_<field>
+      - object-level validate
+    - create/update methods
+      - handling nested writes (advanced)
+    - performance
+      - avoid heavy nested serialization without prefetch/select_related
+  - authentication (DRF)
+    - SessionAuthentication (browser-like)
+    - TokenAuthentication (simple)
+    - JWT (via common third-party)
+    - OAuth2/OIDC (via common third-party)
+  - permissions (DRF)
+    - IsAuthenticated
+    - IsAdminUser
+    - custom permission classes
+      - object-level permission checks
+  - throttling (DRF)
+    - rate limiting classes
+    - per-user/per-IP strategies
+  - pagination (DRF)
+    - PageNumberPagination
+    - LimitOffsetPagination
+    - CursorPagination
+  - filtering/searching/ordering (DRF)
+    - filter backends
+    - ordering filters
+  - versioning (DRF)
+    - URLPathVersioning
+    - NamespaceVersioning
+    - AcceptHeaderVersioning
+  - error handling
+    - exception handler customization
+    - consistent error envelope strategy
+  - API documentation (ecosystem)
+    - schema generation concepts
+    - OpenAPI tooling commonly used (third-party)
+
+- Caching (Django)
+  - cache framework
+    - cache backends
+      - local memory
+      - file-based
+      - redis/memcached (common)
+    - per-view caching
+    - low-level cache API
+    - cache invalidation strategy
+
+- Background jobs (Django ecosystem)
+  - async tasks use cases
+  - Celery integration concept
+    - broker
+    - workers
+    - retries
+    - periodic tasks (beat)
+
+- Observability
+  - logging configuration in settings
+  - request id correlation middleware (custom)
+  - metrics/tracing integration concepts
+
+- Testing (Django + DRF)
+  - unit tests
+    - model tests
+    - service tests
+  - integration tests
+    - database tests
+  - API tests
+    - DRF APIClient
+    - auth/permission tests
+    - pagination/filter tests
+  - performance tests (advanced)
+    - query count assertions (avoid N+1)
+
+- Deployment (Django)
+  - WSGI/ASGI choice
+    - gunicorn (WSGI common)
+    - ASGI server (for async/websockets)
+  - static files
+    - collectstatic
+    - serving strategy (CDN/proxy)
+  - database migrations in deploy pipeline
+  - secrets & environment config
+  - reverse proxy + TLS termination
+  - health checks + readiness checks

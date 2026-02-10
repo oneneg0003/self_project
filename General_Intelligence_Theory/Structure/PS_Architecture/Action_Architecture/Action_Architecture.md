@@ -1,6 +1,6 @@
-For EACH Phase in PS_Phases:
-
-# CANONICAL ACTION ARCHITECTURE (PS-Integrated Version)
+============================================================
+CANONICAL ACTION ARCHITECTURE (Revised with Pure Abstraction Model)
+============================================================
 
 User (Actor)
   ↓
@@ -35,30 +35,42 @@ Evidence Base (what supports assumptions?)
 Uncertainty Map (knowns / unknowns / unknown unknowns)
   ↓
 Risk Awareness (what can go wrong conceptually or procedurally?)
+
+------------------------------------------------------------
+ABSTRACTION DESCENT (Solution Logic Stack)
+------------------------------------------------------------
+
+Paradigm (general reasoning lens)
   ↓
-Paradigm (general problem-solving lens)
+Strategy (direction chosen under paradigm)
   ↓
-Strategy (high-level plan)
+Method (structured approach pattern)
   ↓
-Alternatives Considered (other possible approaches)
+Algorithm (formal logical solution structure)
   ↓
-Selection Rationale (why this strategy?)
+Procedure (ordered execution steps)
   ↓
-Tactics (concrete moves inside strategy)
-  ↓
-Toolset (mechanisms used: models, frameworks, heuristics, representations)
-  ↓
-Techniques / Methods (rules for using the tools)
-  ↓
-Skill Needed (capability required to execute techniques correctly)
-  ↓
-Algorithm (abstract step logic, if applicable)
-  ↓
-Procedure (concrete step-by-step execution)
+Implementation (concrete realization in environment/language)
+
+------------------------------------------------------------
+EXECUTION ENHANCEMENT LAYER (Attached to Implementation)
+------------------------------------------------------------
+
+Implementation
+  ↘
+    Technique (micro-level execution intelligence)
+        ↘
+          Tool (instrument or mechanism used)
+
+------------------------------------------------------------
+CONTROL & VALIDATION LOOP
+------------------------------------------------------------
+
+Implementation Output
   ↓
 Checkpoints / Guardrails (self-check rules)
   ↓
-Error Handling (what to do if reasoning fails or result contradicts goal)
+Error Handling (what to do if contradictions appear)
   ↓
 Metric(s) (how success is measured)
   ↓
@@ -71,8 +83,12 @@ Feedback (results from execution)
 Reflection (why it worked or failed)
   ↓
 Decision Gate (Continue? Revise? Pivot?)
-  ↓
-Communication / Output Structuring (how result is expressed)
+
+------------------------------------------------------------
+LEARNING & ABSTRACTION LOOP
+------------------------------------------------------------
+
+Communication / Output Structuring
   ↓
 Documentation (what to record for reuse)
   ↓
@@ -86,4 +102,16 @@ Abstraction / Schema Update (generalization into reusable template)
   ↓
 Transfer Plan (where else this applies)
 
+============================================================
+Structural Notes
+============================================================
 
+• From Paradigm → Implementation = abstraction descent.
+• Technique and Tool are not in the abstraction chain.
+• They are execution enhancers attached to Implementation.
+• The upper half governs reasoning.
+• The lower half governs validation and learning.
+• The model is now monotonic in abstraction and logically stable.
+
+This version removes hierarchy contradictions.
+============================================================

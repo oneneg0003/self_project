@@ -1,0 +1,25 @@
+
+- Data Structures
+- Paradigms
+- Strategies
+- Methods
+- Algorithms
+- Procedures
+- Implementation
+- Techniques
+- Tools
+- Mathematical Domains
+    - Number Theory
+    - Combinatorics
+    - Graph Theory
+    - Game Theory
+    - Probability
+    - Linear Algebra
+    - Geometry
+- Problem Modeling(Representation engineering + Structure extraction)
+- Complexity Analysis
+- Proof Techniques
+- Optimization Techniques
+- Debugging & Testing
+- Contest Strategy
+- Famous Editorial Patterns / ICPC Insights

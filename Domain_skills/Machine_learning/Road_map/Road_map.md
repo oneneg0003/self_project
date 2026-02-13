@@ -396,3 +396,151 @@ Engineering, deployment, debugging, and monitoring are 80%.
 
 If you master systems thinking + deployment,
 you become a real Category B ML Engineer.
+
+
+
+
+
+
+
+
+
+
+# 🏗️ Does This Roadmap Include System Design?
+
+## 🔎 Short Answer
+
+YES — but at an ML-system level, not full distributed systems design.
+
+---
+
+# 🧠 What Is “System Design” Normally?
+
+In general software engineering, system design means:
+
+- Designing scalable systems
+- Load balancing
+- Microservices
+- Caching layers
+- Databases at scale
+- Distributed systems
+- Fault tolerance
+- Horizontal scaling
+- Message queues
+- Cloud architecture
+
+That is heavy backend system design (like Google/Meta interviews).
+
+Your roadmap does NOT go that deep.
+
+And it should not — you're an undergraduate.
+
+---
+
+# 🤖 What Kind of System Design IS Included?
+
+Your roadmap includes:
+
+## 1️⃣ ML System Design (Entry-Level)
+
+This appears in:
+
+STAGE 5 (Backend + Deployment)  
+STAGE 6 (Data Engineering)  
+STAGE 7 (MLOps)  
+STAGE 9 (ML System Design)
+
+This covers:
+
+- Batch vs real-time inference
+- How model is served
+- How data flows
+- Logging
+- Monitoring
+- Retraining loop
+- Drift detection
+- Model versioning
+
+That IS system design — but scoped to ML systems.
+
+---
+
+# 📦 What That Actually Means
+
+Instead of thinking:
+
+"Which model gives best accuracy?"
+
+You think:
+
+- Where does data come from?
+- How often is it updated?
+- How is it validated?
+- Where is model stored?
+- How does API load it?
+- What happens if model fails?
+- How do we update model safely?
+- How do we monitor drift?
+
+That is ML system design thinking.
+
+---
+
+# 🎯 Example: Recommendation System
+
+Basic thinking:
+Train collaborative filtering model.
+
+System design thinking:
+- Where is user data stored?
+- Is recommendation real-time or batch?
+- How often do we retrain?
+- How do we cache recommendations?
+- What if traffic increases?
+- What if model latency > 200ms?
+
+That’s system thinking.
+
+---
+
+# 🧱 What Is NOT Included (And You Don’t Need Yet)
+
+You do NOT need:
+
+- Designing distributed training clusters
+- Kubernetes architecture mastery
+- Load balancer configuration
+- CAP theorem
+- Sharding strategies
+- Designing YouTube from scratch
+
+That is senior-level backend system design.
+
+---
+
+# 🧠 Final Clarity
+
+Your roadmap includes:
+
+✔ ML pipeline design  
+✔ Data pipeline thinking  
+✔ Deployment architecture  
+✔ Monitoring strategy  
+✔ Retraining strategy  
+
+That IS system design — for ML engineering level.
+
+It does NOT include:
+
+❌ Advanced distributed systems  
+❌ Large-scale backend architecture  
+
+And that is correct for your level.
+
+---
+
+# 🔑 Final One-Line Answer
+
+Yes, your roadmap includes ML-focused system design,
+but not heavy distributed backend system design —
+and that is exactly what an undergraduate ML Engineer needs.

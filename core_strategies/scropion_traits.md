@@ -1,5 +1,5 @@
 # Scorpio Traits
-
+- All or nothing mindset
 - Resilience
   Ability to survive emotional and life extremes and recover stronger.
 
